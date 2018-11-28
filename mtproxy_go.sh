@@ -80,9 +80,9 @@ Download(){
 	else
 		bit="arm"
 	fi
-	wget --no-check-certificate -N "https://github.com/9seconds/mtg/releases/download/${new_ver}/mtg-linux-${bit}"
-	[[ ! -e "mtg-linux-${bit}" ]] && echo -e "${Error} MTProxy 下载失败 !" && rm -rf "${file}" && exit 1
-	mv "mtg-linux-${bit}" "mtg"
+	wget --no-check-certificate -N "https://github.com/9seconds/mtg/releases/download/0.15.1/mtg-linux-amd64"
+	[[ ! -e "mtg-linux-amd64" ]] && echo -e "${Error} MTProxy 下载失败 !" && rm -rf "${file}" && exit 1
+	mv "mtg-linux-amd64" "mtg"
 	[[ ! -e "mtg" ]] && echo -e "${Error} MTProxy 重命名失败 !" && rm -rf "${file}" && exit 1
 	chmod +x mtg
 	echo "${new_ver}" > ${Now_ver_File}
