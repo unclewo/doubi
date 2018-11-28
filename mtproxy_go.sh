@@ -85,7 +85,7 @@ Download(){
 	mv "mtg-linux-amd64" "mtg"
 	[[ ! -e "mtg" ]] && echo -e "${Error} MTProxy 重命名失败 !" && rm -rf "${file}" && exit 1
 	chmod +x mtg
-	echo "${new_ver}" > ${Now_ver_File}
+	
 }
 Service(){
 	if [[ ${release} = "centos" ]]; then
