@@ -68,12 +68,12 @@ check_crontab_installed_status(){
 check_pid(){
 	PID=$(ps -ef| grep "./mtg "| grep -v "grep" | grep -v "init.d" |grep -v "service" |awk '{print $2}')
 }
-check_new_ver(){
+#check_new_ver(){
 	new_ver=$(wget -qO- https://api.github.com/repos/9seconds/mtg/releases| grep "tag_name"| head -n 1| awk -F ":" '{print $2}'| sed 's/\"//g;s/,//g;s/ //g')
 	[[ -z ${new_ver} ]] && echo -e "${Error} MTProxy 最新版本获取失败！" && exit 1
 	echo -e "${Info} 检测到 MTProxy 最新版本为 [ ${new_ver} ]"
 }
-check_ver_comparison(){
+#check_ver_comparison(){
 	now_ver=$(cat ${Now_ver_File})
 	if [[ "${now_ver}" != "${new_ver}" ]]; then
 		echo -e "${Info} 发现 MTProxy 已有新版本 [ ${new_ver} ]，旧版本 [ ${now_ver} ]"
