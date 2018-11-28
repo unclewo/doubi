@@ -65,7 +65,9 @@ check_crontab_installed_status(){
 		fi
 	fi
 }
-
+check_pid(){
+	PID=$(ps -ef| grep "./mtg "| grep -v "grep" | grep -v "init.d" |grep -v "service" |awk '{print $2}')
+}
 Download(){
 	if [[ ! -e "${file}" ]]; then
 		mkdir "${file}"
